@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function index(){
-        $students = Student::all();
+        $students = Student::paginate(4);
+//        $students = Student::all();
         return view('welcome',compact('students'));
     }
     public function create(){
